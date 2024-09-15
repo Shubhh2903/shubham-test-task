@@ -14,7 +14,7 @@ pnpm i
 bun i
 ```
 
-First, run the development server:
+then, run the development server:
 
 ```bash
 npm run dev
