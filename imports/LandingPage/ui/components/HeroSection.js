@@ -11,7 +11,7 @@ const HeroSection = () => {
     <Container direction="column" $fullwidth>
       <ToolTipSection />
       <BannerSection $fullwidth direction="column">
-        <NavbarSection>
+        <NavbarSection ishide>
           <LeftSection>
             <LinkSection>
               {NAVBAR_LEFT_SIDE.map((data, index) => (
@@ -79,6 +79,10 @@ const MainTitle = styled.div`
   line-height: 64px;
   letter-spacing: 0.9px;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 42px;
+  }
 `;
 
 const TopSection = styled(Flex)`
@@ -93,6 +97,10 @@ const InformationWrap = styled(Flex)`
 
 const CtaWrapper = styled(Flex)`
   gap: 17px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const DarkCTA = styled.div`
@@ -130,6 +138,7 @@ const LinkTxt = styled.div`
   letter-spacing: 0.21px;
   display: flex;
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 const LeftSection = styled(Flex)`
@@ -150,6 +159,14 @@ const NavbarSection = styled(Flex)`
     css`
       margin-top: auto;
       padding: 0;
+    `}
+
+  ${({ ishide }) =>
+    ishide &&
+    css`
+      @media (max-width: 768px) {
+        display: none;
+      }
     `}
 `;
 

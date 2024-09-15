@@ -47,16 +47,24 @@ const CTA = styled.div`
   border-radius: 90px;
   margin-top: auto;
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
 `;
 
 const InfoWrapper = styled(Flex)`
   height: 100%;
   padding: 50px 0;
+  width: 100%;
 
   ${({ paddingleft }) =>
     paddingleft &&
     css`
       padding-left: ${paddingleft}px;
+
+      @media (max-width: 768px) {
+        padding-left: 30px;
+      }
     `}
 `;
 
@@ -85,4 +93,8 @@ const Container = styled(Flex)`
   max-width: 1420px;
   margin: 0 auto;
   width: 90%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: unset;
+  }
 `;

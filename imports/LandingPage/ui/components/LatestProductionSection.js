@@ -6,10 +6,10 @@ import { LATEST_PRODUCT_SECTION } from "../../api/constant";
 const LatestProductionSection = () => {
   return (
     <MainContainer $fullwidth direction="column">
-      <Flex justifycontent="space-between" $fullwidth>
+      <MainFlex justifycontent="space-between" $fullwidth>
         <Heading>Latest Products</Heading>
         <OtherTxt>Browse all </OtherTxt>
-      </Flex>
+      </MainFlex>
       <ProductSection>
         {LATEST_PRODUCT_SECTION.map((data, index) => (
           <BoxSection $fullwidth direction="column" key={index}>
@@ -40,6 +40,12 @@ const Othertxt = styled.div`
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.12px;
+`;
+
+const MainFlex = styled(Flex)`
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const AfterPrice = styled.div`
@@ -87,6 +93,10 @@ const ImageSection = styled.div`
     css`
       background-image: url(${src});
     `}
+
+  @media (max-width: 525px) {
+    background-size: cover;
+  }
 `;
 
 const BoxSection = styled(Flex)`
@@ -100,6 +110,18 @@ const ProductSection = styled.div`
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 525px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const OtherTxt = styled.div`

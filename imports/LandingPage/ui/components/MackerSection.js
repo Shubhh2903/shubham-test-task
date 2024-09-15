@@ -82,6 +82,10 @@ const TextWrapper = styled(Flex)`
   max-width: 100%;
   height: 100%;
   width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 40px;
+  }
 `;
 
 const InnerWrapper = styled(Flex)`
@@ -92,6 +96,12 @@ const InnerWrapper = styled(Flex)`
   width: 90%;
   margin: 0 auto;
   gap: 100px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
 `;
 
 const MainContainer = styled(Flex)`

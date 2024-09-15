@@ -6,10 +6,10 @@ import { FAVOURITES_SECTION } from "../../api/constant";
 const FavouritesSection = () => {
   return (
     <MainContainer $fullwidth direction="column">
-      <Flex justifycontent="space-between" $fullwidth>
+      <MainFlex justifycontent="space-between" $fullwidth>
         <Heading>OUR FAVOURITES</Heading>
         <OtherTxt>Browse all </OtherTxt>
-      </Flex>
+      </MainFlex>
       <ProductSection>
         {FAVOURITES_SECTION.map((data, index) => (
           <BoxSection $fullwidth direction="column" key={index}>
@@ -38,6 +38,12 @@ const FavouritesSection = () => {
 };
 
 export default FavouritesSection;
+
+const MainFlex = styled(Flex)`
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
 
 const GrabSection = styled(Flex)`
   position: absolute;
@@ -105,6 +111,10 @@ const ImageSection = styled.div`
     css`
       background-image: url(${src});
     `}
+
+  @media (max-width: 525px) {
+    background-size: cover;
+  }
 `;
 
 const BoxSection = styled(Flex)`
@@ -118,6 +128,18 @@ const ProductSection = styled.div`
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 525px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const OtherTxt = styled.div`

@@ -5,10 +5,10 @@ import Flex from "../../../../lib/atoms/flex";
 const NewsSection = () => {
   return (
     <MainContainer direction="column">
-      <Flex justifycontent="space-between" $fullwidth>
+      <MainFlex justifycontent="space-between" $fullwidth>
         <Heading>Latest news and insights</Heading>
         <OtherTxt>Browse all </OtherTxt>
-      </Flex>
+      </MainFlex>
       <ImageWrapper $fullwidth>
         <LeftImage $fullwidth>
           <InnerWrapper direction="column" justifycontent="end">
@@ -77,6 +77,12 @@ const InnerCta = styled(Flex)`
   text-transform: uppercase;
 `;
 
+const MainFlex = styled(Flex)`
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
 const ImageWrapp = styled.div`
   ${({ src }) =>
     src &&
@@ -88,6 +94,10 @@ const ImageWrapp = styled.div`
   background-position: center;
   height: 70%;
   background-repeat: no-repeat;
+
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
 `;
 
 const BoxWrap = styled(Flex)`
@@ -97,6 +107,10 @@ const BoxWrap = styled(Flex)`
 const RightSection = styled(Flex)`
   height: 100%;
   gap: 2px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Title = styled.div`
@@ -127,6 +141,11 @@ const LeftImage = styled.div`
 const ImageWrapper = styled(Flex)`
   height: 453px;
   gap: 2px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    height: fit-content;
+  }
 `;
 
 const InnerWrapper = styled(Flex)`
@@ -139,7 +158,16 @@ const InnerWrapper = styled(Flex)`
     css`
       padding: 28px 30px;
       padding-bottom: 0;
+
+      @media (max-width: 768px) {
+        padding: 28px 0;
+        padding-bottom: 0;
+      }
     `}
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+  }
 `;
 const InnerTxt = styled.div`
   color: #fff;
@@ -162,6 +190,10 @@ const Datesection = styled(Flex)`
     last &&
     css`
       margin-top: auto;
+
+      @media (max-width: 1024px) {
+        margin-top: 0;
+      }
     `}
 `;
 

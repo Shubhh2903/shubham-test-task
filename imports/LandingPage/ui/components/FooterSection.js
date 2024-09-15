@@ -34,42 +34,40 @@ const FooterSection = () => {
               <ButtonInput>Sign up</ButtonInput>
             </InputField>
           </StyledFlex>
-          <RightWrap>
-            <Wrapperlink direction="column">
-              <Heading>Shop</Heading>
-              <Flex direction="column">
-                {FOOTER_COMPANY_NAME.map((i, j) => (
-                  <Heading subheading key={j}>
-                    {i.title}
-                  </Heading>
-                ))}
-              </Flex>
-            </Wrapperlink>
-            <Wrapperlink direction="column">
-              <Heading>Account</Heading>
-              <Flex direction="column">
-                {FOOTER_ACCOUNT_NAME.map((a, b) => (
-                  <Heading subheading key={b}>
-                    {a.title}
-                  </Heading>
-                ))}
-              </Flex>
-            </Wrapperlink>
-            <Wrapperlink direction="column">
-              <Heading>Shop</Heading>
-              <Flex direction="column">
-                {FOOTER_ABOUT_NAME.map((data, index) => (
-                  <Heading subheading key={index}>
-                    {data.title}
-                  </Heading>
-                ))}
-              </Flex>
-            </Wrapperlink>
-          </RightWrap>
+          <Wrapperlink direction="column">
+            <Heading>Shop</Heading>
+            <Flex direction="column">
+              {FOOTER_COMPANY_NAME.map((i, j) => (
+                <Heading subheading key={j}>
+                  {i.title}
+                </Heading>
+              ))}
+            </Flex>
+          </Wrapperlink>
+          <Wrapperlink direction="column">
+            <Heading>Account</Heading>
+            <Flex direction="column">
+              {FOOTER_ACCOUNT_NAME.map((a, b) => (
+                <Heading subheading key={b}>
+                  {a.title}
+                </Heading>
+              ))}
+            </Flex>
+          </Wrapperlink>
+          <Wrapperlink direction="column">
+            <Heading>Shop</Heading>
+            <Flex direction="column">
+              {FOOTER_ABOUT_NAME.map((data, index) => (
+                <Heading subheading key={index}>
+                  {data.title}
+                </Heading>
+              ))}
+            </Flex>
+          </Wrapperlink>
         </TopSection>
         <BottomSection $fullwidth direction="column">
           <FooterLogo />
-          <Flex $fullwidth justifycontent="space-between">
+          <FinalFlex $fullwidth justifycontent="space-between">
             <LinkWrap>
               <WrapLink>© 2024 Designsnitch. Powered by Markko</WrapLink>
               <WrapLink>Terms & Conditions</WrapLink>
@@ -84,7 +82,7 @@ const FooterSection = () => {
               <Applepay />
               <Klarna />
             </CardSection>
-          </Flex>
+          </FinalFlex>
         </BottomSection>
       </Wrapper>
     </MainContainer>
@@ -101,14 +99,42 @@ const WrapLink = styled.div`
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.12px;
+
+  @media (max-width: 890px) {
+    text-align: center;
+  }
 `;
 
 const CardSection = styled(Flex)`
   gap: 5px;
+
+  @media (max-width: 890px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  svg {
+    width: fit-content !important;
+  }
+`;
+
+const FinalFlex = styled(Flex)`
+  @media (max-width: 890px) {
+    flex-wrap: wrap;
+    row-gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const LinkWrap = styled(Flex)`
   gap: 25px;
+  @media (max-width: 890px) {
+    flex-wrap: wrap;
+    row-gap: 25px;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 const Heading = styled.div`
@@ -155,6 +181,11 @@ const InputWrap = styled.input`
 
 const InputField = styled(Flex)`
   gap: 19px;
+
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    align-items: unset;
+  }
 `;
 
 const ButtonInput = styled(Flex)`
@@ -169,6 +200,10 @@ const ButtonInput = styled(Flex)`
   font-size: 14px;
   font-weight: 500;
   line-height: 22px; /* 157.143% */
+
+  @media (max-width: 1250px) {
+    width: fit-content;
+  }
 `;
 
 const MainTitle = styled.div`
@@ -205,13 +240,30 @@ const BottomSection = styled(Flex)`
   svg {
     width: 95%;
   }
+
+  @media (max-width: 890px) {
+    margin-top: 50px;
+  }
 `;
 
 const TopSection = styled.div`
   display: grid;
   width: 100%;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
 
-  grid-template-columns: 1fr 1fr;
+  @media (max-width: 1130px) {
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 30px;
+    row-gap: 40px;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Wrapper = styled(Flex)`
