@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Articulatcf";
+  src: url("./fonts/articulatcf-light.woff") format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Articulatcf";
+  src: url("./fonts/articulatcf-regular.woff") format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Articulatcf";
+  src: url("./fonts/articulatcf-medium.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Articulatcf";
+  src: url("./fonts/articulatcf-semibold.woff") format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Articulatcf";
+  src: url("./fonts/articulatcf-bold.woff") format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Powergrotesk";
+  src: url("./fonts/powergrotesk-regular.woff") format("woff");
+  font-weight: 400;
+}
