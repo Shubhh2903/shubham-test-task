@@ -16,7 +16,6 @@ import {
   Paypal,
   Visa,
 } from "../assets/PaymentCardIcons";
-
 const FooterSection = () => {
   return (
     <MainContainer $fullwidth>
